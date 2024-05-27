@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            width: 400px;
+        }
+
+        .entryarea{
+            position: relative;
+            height: 120px;
+            line-height: 80px;
+        }
+
+        input{
+            position: absolute;
+            width: 100%;
+            outline: none;
+            font-size: 2.2em;
+            padding: 0 30px;
+            line-height: 80px;
+            border-radius: 10px;
+            border: 2px solid #000000;
+            background: transparent;
+            transition: 0.1s ease;
+            z-index: 1111;
+        }
+
+        .labelline{
+            position: absolute;
+            font-size: 1.6em;
+            color: #000000;
+            padding: 0 25px;
+            margin: 0 20px;
+            background-color: transparent;
+            transition: 0.2s ease;
+        }
+
+input:focus,
+input:valid{
+    color: darkred;
+    border: 4px solid darkred;
+}
+input:focus + .labelline,
+input:valid + .labelline{
+    color: darkred;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 12px;
+    transform: translate(-15px,-16px) scale(0.88);
+    z-index: 1111;
+}
+    </style>
+
+</head>
+<body>
+
+
+    
+    <div class="container">
+        <div class="entryarea">
+            <input type="text" required>
+            <div class="labelline">Enter your name</div>
+        </div>
+    </div>
+</body>
+</html>
