@@ -642,14 +642,11 @@ def process_pdf(request):
         response['Content-Disposition'] = 'attachment; filename="Recomendaciones médicas laborales SG-SST.pdf"'
         fecha_actual = datetime.now().strftime("%d/%m/%Y")
 
-        image_path = 'static/sources/logocolegio.jpg'  
-        img = Image(image_path)
-        img.drawHeight = 1.25 * inch 
-        img.drawWidth = 1.25 * inch
+        image_logo_razon_path = 'static/sources/logoyrazonsocal.jpeg'
+        img_logo_razon = Image(image_logo_razon_path)
+        img_logo_razon.drawHeight = 1 * inch
+        img_logo_razon.drawWidth = 6.5 * inch
 
-
-
-		
         contenido_nueva_tabla = [
             ["De acuerdo al asunto en mención me permito remitir recomendaciones médicas laborales de acuerdo al examen médico ocupacional. Desde seguridad y salud en el trabajo estaremos atentos a su buen estado de salud."]
         ]
@@ -705,10 +702,11 @@ def process_pdf(request):
             ('GRID', (0, 0), (-1, -1), 1, colors.black)
         ])
         estilo_tabla_img = TableStyle([
-    		('ALIGN', (0, 0), (-1, -1), 'RIGHT'),
+			('ALIGN', (0, 0), (-1, -1), 'CENTER'),
 		]
 		)
-        data_tabla = [[img]]
+		
+        data_tabla = [[img_logo_razon]]
         tabla_informacion = Table(data_tabla_informacion)
         tabla_texto = Table(data_tabla_texto)
         tabla_extra = Table(data_tabla_extra)
